@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-5</title>
+    <style>
+        meter{
+            width: 100%;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>METER TAG</h1>
+    </center>
+    <hr>
+
+    <h3>Default Meter Tag..!</h3>
+    <meter></meter>
+
+    <h3>Static Meter Tag</h3>
+    <meter min="1" max="100" value="80"></meter>
+     
+    <h3>Dynamic Meter Tag</h3>
+    <meter min="1" max="100" id="meter"></meter>
+    <p><span id="meter-text">0</span>% complete...</p>
+
+    <script>
+       let minscript = 1;
+       function startmeter(){ // Function Delcaration
+           if (minscript <= 100 ) {
+               minscript++; // 1 + 1 =2
+              document.getElementById("meter").value = minscript;
+              document.getElementById('meter-text').innerHTML = minscript;
+           }
+       }
+       //startmeter(); // Fujnction Calling
+
+       setInterval('startmeter()',1000);
+    </script>
+</body>
+</html>
